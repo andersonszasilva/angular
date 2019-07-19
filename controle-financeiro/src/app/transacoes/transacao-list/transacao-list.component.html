@@ -11,11 +11,11 @@
     <tbody>
       
         <tr *ngFor="let transacao of transacoes" >
-          <td>{{ transacao.data }}</td>
+          <td>{{ transacao.movementDate }}</td>
           <td>{{ transacao.name }}</td>
-          <td>{{ transacao.valor }}</td>
-          <td>{{ transacao.tipo }}</td>
-          <td>{{ transacao.categoria }}</td>
+          <td>{{ transacao.value }}</td>
+          <td>{{ transacao.type }}</td>
+          <td>{{ transacao.category.name }}</td>
         </tr>
     </tbody>
   </table>

@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { TransacaoComponet } from './transacao/transacao.component';
+import { HttpClientModule } from '@angular/common/http';
+
+import { TransacaoListComponent } from './transacao-list/transacao-list.component';
+import { CommonModule } from '@angular/common';
+import { TransacaoFormComponent } from './transacao-form/transacao-form.component';
 
 @NgModule({
-    imports: [BrowserModule],
-    declarations: [TransacaoComponet],
-    exports: [TransacaoComponet]
+    declarations: [TransacaoListComponent, TransacaoFormComponent],
+    imports: [
+        HttpClientModule,
+        CommonModule
+    ],
 })
 export class TransacoesModule {
 

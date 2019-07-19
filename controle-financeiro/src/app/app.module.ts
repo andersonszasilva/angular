@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app.routing.module';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TransacoesModule } from './transacoes/transacoes.module';
-import { HttpClientModule } from '@angular/common/http';
+import { ErrorsModule } from './errors/errors.module';
+
 
 @NgModule({
   declarations: [
@@ -12,9 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     TransacoesModule,
-    HttpClientModule
+    AppRoutingModule,
+    ErrorsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
