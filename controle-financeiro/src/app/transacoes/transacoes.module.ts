@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
-import { TransacaoListComponent } from './transacao-list/transacao-list.component';
 import { CommonModule } from '@angular/common';
-import { TransacaoFormComponent } from './transacao-form/transacao-form.component';
+import { TransacaoListModule } from './transacao-list/transacao-list.module';
+import { TransacaoFormModule } from './transacao-form/transacao-form.module';
+import { TransacaoModule } from './transacao/transacao.module';
 
 @NgModule({
-    declarations: [TransacaoListComponent, TransacaoFormComponent],
     imports: [
-        HttpClientModule,
-        CommonModule
+        TransacaoModule,
+        TransacaoListModule,
+        TransacaoFormModule
     ],
 })
 export class TransacoesModule {

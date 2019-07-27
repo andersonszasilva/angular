@@ -1,21 +1,14 @@
-<table class="table table-striped table-sm">
-    <thead>
-      <tr>
-        <th scope="col">Data</th>
-        <th scope="col">Transação</th>
-        <th scope="col">Valor</th>
-        <th scope="col">Tipo</th>
-        <th scope="col">Categoria</th>
-      </tr>
-    </thead>
-    <tbody>
-      
-        <tr *ngFor="let transacao of transacoes" >
-          <td>{{ transacao.movementDate }}</td>
-          <td>{{ transacao.name }}</td>
-          <td>{{ transacao.value }}</td>
-          <td>{{ transacao.type }}</td>
-          <td>{{ transacao.category.name }}</td>
-        </tr>
-    </tbody>
-  </table>
+<form class="form-inline" id="form-movement-filter">
+  <input type="hidden" name="accountId" value="">
+  <label class="sr-only" for="datepicker">Dia</label>
+  <input type="text" name="period" id="datepicker" class="form-control mb-2 mr-sm-2" placeholder="Transação"
+    autocomplete="off" required="required"
+    (keyup)="debounce.next($event.target.value)">
+</form>
+{{filter}}
+
+<app-transacoes [transacoes]="transacoes | filterByName: filter"></app-transacoes>
+<app-load-button 
+    (click)="load()" 
+    [hasMore]="hasMore">
+  </app-load-button>
